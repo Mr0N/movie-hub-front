@@ -1,0 +1,52 @@
+.find-tool-icon
+{
+background-image: url("../../assets/find.svg");
+position: relative;
+left: 0;
+}
+.find-white
+{
+    color: white;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    font-size: 12px;
+}
+.cont-find
+{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    left: 0;
+    
+}
+
+.container-find
+{
+ position: relative;
+
+    
+}
+.inputText-find
+{
+    display: none;
+    position: relative;
+    width: 100%;
+    left: 0;
+}
+.input-find
+{
+    flex: 1;
+    left: 0;
+     background-color: #222d33; 
+    border: 0;
+    outline: none;
+      transition: width 0.9s ease;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.hide-find
+{
+    display: none;
+}
