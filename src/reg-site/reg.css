@@ -1,4 +1,21 @@
-
+.bold-reg{
+    font-weight: bold;
+}
+.modal-window-reg{
+    font-size: 12px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.hr-reg {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.modal-window-reg .form-control
+{
+    height: 7vh;
+    border:none;
+    
+}
 .modal-window-reg{
     position: absolute;
     top: 50%;
@@ -11,7 +28,9 @@
     z-index: 2;
     background-color:white;
     width: 35%;
-    height: 90%;
+      max-height: 90vh;
+  height: auto;
+ 
 }
 
 .hide-reg{
@@ -54,7 +73,3 @@
     background-color:whitesmoke;
 }
 
-.form-reg > div
-{
-    padding-bottom: 10px;
-}

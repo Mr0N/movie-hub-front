@@ -120,12 +120,14 @@ flex:0;
   position: relative;
     top:1vh;
 }
-.reg-header a {
+
+.link-reg {
   text-decoration: none;
   position: relative;
   top:1vh;
   padding-left: 45px;
 }
+
 .toggle-header{
   position: relative;
   top:5%;
