@@ -2,7 +2,7 @@ import React from "react";
 import "../reg-site/reg.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap";
-import closeImage from "../assets/close.svg";
+import CloseIcon  from "../tools-site/icons-site/close-icon-site";
 import { left } from "@popperjs/core";
 
 
@@ -25,9 +25,7 @@ let reg = () => {
          <div className="speed-reg">
             <span className="bold-reg">Быстрая регистрация</span>
             <span className="close-registration" onClick={change}>
-               <img style={{width:"20px",
-                           height:"20px" 
-               }} src={closeImage}></img>
+               <CloseIcon/>
             </span>
          </div>
          <hr  className="hr-reg"/>
