@@ -13,7 +13,7 @@ let getLength = (name) => {
     }
     return vhToPx;
 }
-let Btn = ({ name }) => {
+let Btn = ({ name,val}) => {
     let [pxLength, setLength] = useState(getLength(name));
     useEffect(() => {
         const handleResize = () => {

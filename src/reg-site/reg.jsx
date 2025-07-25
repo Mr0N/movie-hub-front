@@ -1,5 +1,5 @@
 import React from "react";
-import "../reg-site/reg.css";
+import "./reg.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap";
 import CloseIcon  from "../tools-site/icons-site/close-icon-site";

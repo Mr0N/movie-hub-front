@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import  "../toggle-site/toggle.css";
+import  "./toggle.css";
 import Image from "../assets/moon-sun.svg"
 
 let sleep = async (time)=>{

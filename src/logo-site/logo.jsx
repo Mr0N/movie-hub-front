@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import Btn from "../btn-site/btn";
-import "../logo-site/logo.css";
+import "./logo.css";
 import activeLogo from "../assets/logo-activate.png";
 import deactiveLogo from "../assets/logo-deactive.png";
 export default class Logo extends Component

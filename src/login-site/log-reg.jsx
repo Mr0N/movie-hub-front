@@ -39,7 +39,7 @@ let login = () => {
                                         <input  className="input-form form-control" placeholder="Пароль" name="pass" id="pass-reg-site"></input>
                                     </div>
                                     <div className="bottom-login-reg">
-                                        <a className="textColor" style={{paddingTop:"0"}} href="#">Затерялся пароль?</a>
+                                        <a className="textColor" style={{paddingTop:"0",top:"0"}} href="#">Затерялся пароль?</a>
                                         <div>
                                             <input className="form-check-input" id="dontremember" name="check" type="checkbox" />
                                             <label className="form-check-label" for="dontremember" >Не запоминать меня</label>
@@ -51,7 +51,7 @@ let login = () => {
                                     <hr />
                                     <div className="log-form-why">
                                         <p>Ты еще не с нами?</p>
-                                        <p><a className="textColor" href="#">Регистрируйся!</a></p>
+                                        <p><a style={{top:"0"}} className="textColor" href="#">Регистрируйся!</a></p>
                                     </div>
                                 </div>
                             </form>

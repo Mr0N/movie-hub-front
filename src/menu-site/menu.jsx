@@ -5,6 +5,7 @@ import List from "./list-site/list.jsx";
 import Icon from "./icon-brand-site/icon-brand";
 import NetFlix from "../assets/netflix.svg";
 import Find from "./find-site/find";
+import { Link } from "react-router-dom";
 let GetCinema = () => {
     const Cinema = [
         "Вестерны",
@@ -163,7 +164,7 @@ let GetStyle = (action) => {
     return styleData;
 }
 
-let Panel = ({ checkShowFunction, listCategory, children }) => {
+let Panel = ({ checkShowFunction, listCategory, children,findTheBestTitle,typeCinema }) => {
     return (<div className={`cinema ${checkShowFunction() ? "hide-menu" : ""}`}>
         <div className="category">
             <div className="list-category">
@@ -174,7 +175,7 @@ let Panel = ({ checkShowFunction, listCategory, children }) => {
             </div>
         </div>
         <div>
-            <SearchPanel />
+            <SearchPanel findTheBest={findTheBestTitle} typeCinema={typeCinema} />
         </div>
 
 
@@ -199,7 +200,7 @@ let Menu = () => {
             <li onMouseLeave={() => setHovered({ cinema: true, serials: true, cartoons: true, anime: true })}
                 onMouseEnter={() => setHovered({ cinema: false, serials: true, cartoons: true, anime: true })}>
                 <p className="cinema-item item-menu">Фильмы<Arrow styleData={GetStyle(() => obj.cinema)} /></p>
-                <Panel checkShowFunction={() => obj.cinema}
+                <Panel findTheBestTitle="Найти лучшие фильмы" typeCinema="cinema" checkShowFunction={() => obj.cinema}
                     listCategory={GetCinema()}>
                     <Icon pathToUri={NetFlix} width="87" heigth="25" />
                 </Panel>
@@ -230,10 +231,10 @@ let Menu = () => {
                 </Panel>
             </li>
             <li>
-                <a className="item-menu">Новинки</a>
+                <Link to="/new" className="item-menu">Новинки</Link>
             </li>
             <li>
-                <a className="item-menu">Анонсы</a>
+                <Link to="/announce" className="item-menu">Анонсы</Link>
             </li>
             <li>
                 <a className="item-menu">Подборки</a>
