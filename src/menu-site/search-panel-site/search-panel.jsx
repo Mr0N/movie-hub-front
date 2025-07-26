@@ -110,7 +110,7 @@ let SearchPanel = ({ findTheBest = 'Найти лучшее аниме', typeCin
             cinema:typeCinema
         };
         navigate({
-            pathname: "/data",
+            pathname: "/info",
             search: createSearchParams(params).toString()
         });
     }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../button-site/btn.css";
+import { Link } from "react-router-dom";
 
 let vwToPx = (vw) => {
     return window.innerWidth * (vw / 100);
@@ -13,7 +14,7 @@ let getLength = (name) => {
     }
     return vhToPx;
 }
-let Btn = ({ name,val}) => {
+let Btn = ({ name,value,category}) => {
     let [pxLength, setLength] = useState(getLength(name));
     useEffect(() => {
         const handleResize = () => {
@@ -29,10 +30,10 @@ let Btn = ({ name,val}) => {
     }, [name]);
 
 
-    return <button style={{
+    return <Link to={`data/${category}/${value}`} style={{
         width: `120px`,
         height:"30px"
     }}
-        className="btn btn-site">{name}</button>
+        className="btn btn-site">{name}</Link>
 }
 export default Btn;
