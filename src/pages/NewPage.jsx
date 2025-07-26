@@ -2,7 +2,7 @@ import React  from "react";
 import Head from "../header-site/head"
 import Menu from "../menu-site/menu"
 import { useLocation } from "react-router-dom";
-let Default = ()=>{
+let NewPage = ()=>{
       const location = useLocation();
 
   // Функція для парсингу query string
@@ -17,4 +17,4 @@ let Default = ()=>{
         {txt}
     </div>
 }
-export default Default;
+export default NewPage;
