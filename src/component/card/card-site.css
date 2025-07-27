@@ -1,13 +1,13 @@
 .card-container
 {
-    height: 302px;
-    width: 200px;
+    height: 120%;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
-    
+    padding-left: 5px;
 }
 .card-container > * 
 {
@@ -25,7 +25,7 @@
 height: 10%;
 }
 .card-trailer{
-    height: 10%;
+    height: 15%;
     position: relative;
     
 
@@ -41,22 +41,65 @@ height: 10%;
 .card-icon{
     height: 70%;
     padding: 30% 30% 30% 25%;
+    position:relative;
 }
 .card-footer
 {
     height: 5%;
 }
 .card-hide{
-    display: none;
+    display: none !important;
 }
 .card-icon-trailer{
     height: 90%;
     width: 90%;
 }
 .card-header-icon-trailer
-{
+{ 
     width: 30%;
 }
 .card-opacity{
     opacity: 0.7;
+}
+
+.card-trailer-site
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.card-header{
+    display: flex;
+    
+}
+
+.card-icon-data
+{
+height: 20px;
+width: 20px;
+z-index: 6;
+
+}
+.card-block
+{
+    display: flex;
+    flex-direction:row;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+}
+.card-block p
+{
+    color:white;
+    font-size: 8px;
+}
+.card-icon-img
+{
+    height: 40%;
+    width: 40%;
+    position: absolute;
+    top:15%;
+    left: 34%;
+    bottom: 30%;
 }
