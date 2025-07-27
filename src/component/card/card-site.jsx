@@ -5,49 +5,51 @@ import anime from "../../assets/card/anime.svg"
 import cartoons from "../../assets/card/cartoons.svg"
 import movies from "../../assets/card/movies.svg"
 import serials from "../../assets/card/serials.svg"
-let Anime = ()=>{
-     return  <div className="card-block">
-            <p>Аниме</p>
+let Anime = () => {
+    return <div className="card-block">
+        <p>Аниме</p>
         <img className="card-icon-data" src={anime}></img>
-        </div> 
+    </div>
 }
-let Cartoons = ()=>{
-       return  <div className="card-block">
-            <p>Мультфильмы</p>
+let Cartoons = () => {
+    return <div className="card-block">
+        <p>Мультфильмы</p>
         <img className="card-icon-data" src={cartoons}></img>
-        </div> 
+    </div>
 }
-let Serials = ()=>{
-     return  <div className="card-block">
-            <p>Сериалы</p>
+let Serials = () => {
+    return <div className="card-block">
+        <p>Сериалы</p>
         <img className="card-icon-data" src={serials}></img>
-        </div> 
-} 
-let Movies = ()=>{
-        return  <div className="card-block">
-            <p>Фильм</p>
+    </div>
+}
+let Movies = () => {
+    return <div className="card-block">
+        <p>Фильм</p>
         <img className="card-icon-data" src={movies}></img>
-        </div> 
+    </div>
 }
 
 
-let Card = ({ backgroundImg,BlockData}) => {
+let Card = ({ backgroundImg, BlockData }) => {
     let [objShow, setShow] = useState(false);
-    let [objViewTrailer,setViewTrailer] = useState(false);
+    let [objViewTrailer, setViewTrailer] = useState(false);
     return <div
         style={{ backgroundImage: `url(${backgroundImg})` }}
-        className="card-container" onMouseEnter={()=>setShow(true)} onMouseLeave={()=>setShow(false)}>
+        className="card-container" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
         <div className="card-header">
-            <BlockData/>
+            <BlockData />
         </div>
-        <div  className="card-trailer" onMouseLeave={()=>setViewTrailer(false)} >
-            <div className={objViewTrailer? "card-opacity" :""} onMouseEnter={()=>setViewTrailer(true)} className="card-header-icon-trailer">
+        <div className="card-trailer" onMouseLeave={() => setViewTrailer(false)} >
+            <div className={objViewTrailer ? "card-opacity" : ""} onMouseEnter={() => setViewTrailer(true)} className="card-header-icon-trailer">
                 <img className="card-icon-trailer" src={preview}></img>
             </div>
-            <div class={objViewTrailer ? "card-trailer-site card-opacity" :"card-trailer-site card-hide"}>
-                <p  style={{textTransform:"upper",
-                            color:"white",
-                            fontSize:"10px"}} >Смотреть трейлер</p>
+            <div class={objViewTrailer ? "card-trailer-site card-opacity" : "card-trailer-site card-hide"}>
+                <p style={{
+                    textTransform: "upper",
+                    color: "white",
+                    fontSize: "10px"
+                }} >Смотреть трейлер</p>
             </div>
         </div>
         <div className="card-icon">
@@ -56,16 +58,16 @@ let Card = ({ backgroundImg,BlockData}) => {
         <div className="card-footer">4</div>
     </div>
 }
-let AnimeCard= ({backgroundImg})=>{
-    return <Card backgroundImg={backgroundImg} BlockData={Anime}/>
+let AnimeCard = ({ backgroundImg }) => {
+    return <Card backgroundImg={backgroundImg} BlockData={Anime} />
 }
-let CartoonsCard= ({backgroundImg})=>{
-    return <Card backgroundImg={backgroundImg} BlockData={Cartoons}/>
+let CartoonsCard = ({ backgroundImg }) => {
+    return <Card backgroundImg={backgroundImg} BlockData={Cartoons} />
 }
-let SerialsCard= ({backgroundImg})=>{
-    return <Card backgroundImg={backgroundImg} BlockData={Serials}/>
+let SerialsCard = ({ backgroundImg }) => {
+    return <Card backgroundImg={backgroundImg} BlockData={Serials} />
 }
-let MoviesCard= ({backgroundImg})=>{
-    return <Card backgroundImg={backgroundImg} BlockData={Movies}/>
+let MoviesCard = ({ backgroundImg }) => {
+    return <Card backgroundImg={backgroundImg} BlockData={Movies} />
 }
-export  {MoviesCard,SerialsCard,AnimeCard,CartoonsCard};
+export { MoviesCard, SerialsCard, AnimeCard, CartoonsCard };
