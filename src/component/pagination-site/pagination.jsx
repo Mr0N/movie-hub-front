@@ -5,7 +5,7 @@ import tempImage from "../../assets/temp-image.jpg";
 let Pagination = () => {
     return <div className="container">
         <div className="row">
-            
+
             <div className="col-2">
                 <MoviesCard backgroundImg={tempImage} />
             </div>
@@ -19,8 +19,7 @@ let Pagination = () => {
                 <CartoonsCard backgroundImg={tempImage} />
             </div>
         </div>
-         <div className="row g-5">
-            
+        <div className="row">
             <div className="col-2">
                 <MoviesCard backgroundImg={tempImage} />
             </div>
@@ -34,7 +33,7 @@ let Pagination = () => {
                 <CartoonsCard backgroundImg={tempImage} />
             </div>
         </div>
-     
     </div>
+
 }
 export default Pagination;

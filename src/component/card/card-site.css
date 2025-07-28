@@ -1,15 +1,11 @@
 .card-container
 {
-    height: 120%;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+ 
+    
     display: flex;
     flex-direction: column;
-    padding-left: 5px;
-    margin-bottom: 6px;
-    margin-top: 6px;
+    padding-left: 0px;
+    margin: 3px 3px 3px 3px;
     
     border-radius: 3px;
     border-color: green;
@@ -46,13 +42,13 @@ height: 10%;
     opacity: 1;
 }
 .card-icon{
-    height: 70%;
+    height: 50%;
     padding: 30% 30% 30% 25%;
     position:relative;
 }
 .card-footer
 {
-    height: 5%;
+    height: 0%;
 }
 .card-hide{
     display: none !important;
@@ -87,8 +83,8 @@ height: 10%;
 
 .card-icon-data
 {
-height: 20px;
-width: 20px;
+height: 10px;
+width: 10px;
 z-index: 5;
 
 }
@@ -117,7 +113,9 @@ z-index: 5;
     left: 34%;
     bottom: 30%;
 }
-.card-icon-data
+.card-image
 {
-    object-fit: fill;
+    position: absolute;
+     width: 20vh;
+  height: auto;
 }

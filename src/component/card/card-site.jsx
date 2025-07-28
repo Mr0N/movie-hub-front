@@ -29,35 +29,6 @@ let Movies = () => {
         <img className="card-icon-data" src={movies}></img>
     </div>
 }
-
-
-let Card = ({ backgroundImg, BlockData }) => {
-    let [objShow, setShow] = useState(false);
-    let [objViewTrailer, setViewTrailer] = useState(false);
-    return <div
-        style={{ backgroundImage: `url(${backgroundImg})` }}
-        className="card-container" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-        <div className="card-header">
-            <BlockData />
-        </div>
-        <div className="card-trailer" onMouseLeave={() => setViewTrailer(false)} >
-            <div className={objViewTrailer ? "card-opacity" : ""} onMouseEnter={() => setViewTrailer(true)} className="card-header-icon-trailer">
-                <img className="card-icon-trailer" src={preview}></img>
-            </div>
-            <div class={objViewTrailer ? "card-trailer-site card-opacity" : "card-trailer-site card-hide"}>
-                <p style={{
-                    textTransform: "upper",
-                    color: "white",
-                    fontSize: "10px"
-                }} >Смотреть трейлер</p>
-            </div>
-        </div>
-        <div className="card-icon">
-            <img className={`card-icon-img ${!objShow ? "card-hide" : ""}`} src={preview}></img>
-        </div>
-        <div className="card-footer">4</div>
-    </div>
-}
 let AnimeCard = ({ backgroundImg }) => {
     return <Card backgroundImg={backgroundImg} BlockData={Anime} />
 }
@@ -70,4 +41,34 @@ let SerialsCard = ({ backgroundImg }) => {
 let MoviesCard = ({ backgroundImg }) => {
     return <Card backgroundImg={backgroundImg} BlockData={Movies} />
 }
+
+let Card = ({ backgroundImg, BlockData }) => {
+    let [objShow, setShow] = useState(false);
+    let [objViewTrailer, setViewTrailer] = useState(false);
+    return <div
+        style={{ height:"250px",width:"166px",backgroundImage:`url(${backgroundImg})` }}
+        className="card-container" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+         
+            <div className="card-header">
+                <BlockData />
+            </div>
+            <div className="card-trailer" onMouseLeave={() => setViewTrailer(false)} >
+                <div className={objViewTrailer ? "card-opacity" : ""} onMouseEnter={() => setViewTrailer(true)} className="card-header-icon-trailer">
+                    <img className="card-icon-trailer" src={preview}></img>
+                </div>
+                <div class={objViewTrailer ? "card-trailer-site card-opacity" : "card-trailer-site card-hide"}>
+                    <p style={{
+                        textTransform: "upper",
+                        color: "white",
+                        fontSize: "10px"
+                    }} >Смотреть трейлер</p>
+                </div>
+            </div>
+            <div className="card-icon">
+                <img className={`card-icon-img ${!objShow ? "card-hide" : ""}`} src={preview}></img>
+            </div>
+            <div className="card-footer">4</div>
+    </div>
+}
+
 export { MoviesCard, SerialsCard, AnimeCard, CartoonsCard };
