@@ -124,3 +124,25 @@ z-index: 5;
 {
     display: none;
 }
+
+.card-info
+{
+    cursor:help;
+}
+.show-info
+{
+    height: 50vh;
+    width: 40vw;
+    background-color:#222d33;
+    position: absolute;
+    left: 100%;
+    border-color:white;
+    border-radius:1px;
+    border-style:solid;
+    z-index: 88;
+    
+}
+.blue-color
+{
+    color:#2e859e;
+}

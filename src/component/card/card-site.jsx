@@ -9,11 +9,11 @@ import InfoIcon from "../icon-site/info-icon";
 let BaseData = ({color,name,icon,show})=>{
    
     return <div>
-    <div style={{backgroundColor:`${color}`}} className="card-block">
-        <p className={show ? "card-site-hide":""}>{name}</p>
-        {show ? <img className="card-icon-data" src={icon}></img>:<img className={`card-site-hide`} src={InfoIcon}></img>}    
-    </div>
-    
+        <div style={{backgroundColor:`${color}`}} className="card-block">
+            <p className={!show ? "card-site-hide":""}>{name}</p>
+            {show ? <img className="card-icon-data" src={icon}></img>:<InfoIcon style={{ height: "20px", width: "20px" }} className="card-info card-icon-data" />}    
+        </div>
+        
     </div>
 }
 let Anime = ({show}) => {
@@ -48,10 +48,16 @@ let MoviesCard = ({ backgroundImg }) => {
     data.movies = true;
     return <Card backgroundImg={backgroundImg} data={data}/>
 }
-
+let ShowInfo = ()=>
+    {
+        return <div>
+             <a className="blue-color">Title</a>
+        </div>
+    }
 let Card = ({ backgroundImg,data}) => {
     let [objShow, setShow] = useState(false);
     let [objViewTrailer, setViewTrailer] = useState(false);
+    let [objCardHeader,setCard] = useState(false);
     let ElementInfo = 0;
     if(data.anime)
         ElementInfo = Anime;
@@ -59,13 +65,18 @@ let Card = ({ backgroundImg,data}) => {
         ElementInfo = Movies;
     else if(data.serials) ElementInfo = Serials;
     else if(data.cartoons) ElementInfo = Cartoons;
-
+    let dragLeave = ()=>{
+         setCard(false);
+    }
     return <div
         style={{ height:"250px",width:"166px",backgroundImage:`url(${backgroundImg})` }}
         className="card-container" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
          
-            <div className="card-header">
+            <div onMouseEnter={()=>setCard(true)} onMouseLeave={dragLeave}  className="card-header">
             {objShow ? <ElementInfo show={false}/>:<ElementInfo show={true}/>}
+                <div className={objCardHeader ? "show-info": "show-info card-site-hide"}>
+                   
+                </div>
             </div>
             <div className="card-trailer" onMouseLeave={() => setViewTrailer(false)} >
                 <div className={objShow ? "card-opacity" : ""} onMouseEnter={() => setViewTrailer(true)} className="card-header-icon-trailer">
