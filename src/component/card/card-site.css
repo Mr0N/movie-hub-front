@@ -119,3 +119,8 @@ z-index: 5;
      width: 20vh;
   height: auto;
 }
+
+.card-site-hide
+{
+    display: none;
+}

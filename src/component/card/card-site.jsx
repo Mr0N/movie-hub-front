@@ -1,59 +1,74 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./card-site.css";
 import preview from "../../assets/preview.svg";
 import anime from "../../assets/card/anime.svg"
 import cartoons from "../../assets/card/cartoons.svg"
 import movies from "../../assets/card/movies.svg"
 import serials from "../../assets/card/serials.svg"
-let Anime = () => {
-    return <div className="card-block">
-        <p>Аниме</p>
-        <img className="card-icon-data" src={anime}></img>
+import InfoIcon from "../icon-site/info-icon";
+let BaseData = ({color,name,icon,show})=>{
+   
+    return <div>
+    <div style={{backgroundColor:`${color}`}} className="card-block">
+        <p className={show ? "card-site-hide":""}>{name}</p>
+        {show ? <img className="card-icon-data" src={icon}></img>:<img className={`card-site-hide`} src={InfoIcon}></img>}    
+    </div>
+    
     </div>
 }
-let Cartoons = () => {
-    return <div className="card-block">
-        <p>Мультфильмы</p>
-        <img className="card-icon-data" src={cartoons}></img>
-    </div>
+let Anime = ({show}) => {
+    return   <BaseData color="#696969" name="Аниме" show={show} icon={anime}/>
 }
-let Serials = () => {
-    return <div className="card-block">
-        <p>Сериалы</p>
-        <img className="card-icon-data" src={serials}></img>
-    </div>
+let Cartoons = ({show}) => {
+     return   <BaseData color="#216d2b" name="Мультфильмы"  show={show}  icon={cartoons}/>
 }
-let Movies = () => {
-    return <div className="card-block">
-        <p>Фильм</p>
-        <img className="card-icon-data" src={movies}></img>
-    </div>
+let Serials = ({show}) => {
+    return   <BaseData color="#df565a" name="Сериалы"  show={show}  icon={serials}/>
+}
+let Movies = ({show}) => {
+    return   <BaseData color="#00a0b0" name="Фильмы" show={show}  icon={movies}/>
 }
 let AnimeCard = ({ backgroundImg }) => {
-    return <Card backgroundImg={backgroundImg} BlockData={Anime} />
+    let data = new Data();
+    data.anime = true;
+    return <Card backgroundImg={backgroundImg} data={data} />
 }
 let CartoonsCard = ({ backgroundImg }) => {
-    return <Card backgroundImg={backgroundImg} BlockData={Cartoons} />
+        let data = new Data();
+    data.cartoons = true;
+    return <Card backgroundImg={backgroundImg}  data={data}/>
 }
 let SerialsCard = ({ backgroundImg }) => {
-    return <Card backgroundImg={backgroundImg} BlockData={Serials} />
+        let data = new Data();
+    data.serials = true;
+    return <Card backgroundImg={backgroundImg} data={data}/>
 }
 let MoviesCard = ({ backgroundImg }) => {
-    return <Card backgroundImg={backgroundImg} BlockData={Movies} />
+        let data = new Data();
+    data.movies = true;
+    return <Card backgroundImg={backgroundImg} data={data}/>
 }
 
-let Card = ({ backgroundImg, BlockData }) => {
+let Card = ({ backgroundImg,data}) => {
     let [objShow, setShow] = useState(false);
     let [objViewTrailer, setViewTrailer] = useState(false);
+    let ElementInfo = 0;
+    if(data.anime)
+        ElementInfo = Anime;
+    else if(data.movies) 
+        ElementInfo = Movies;
+    else if(data.serials) ElementInfo = Serials;
+    else if(data.cartoons) ElementInfo = Cartoons;
+
     return <div
         style={{ height:"250px",width:"166px",backgroundImage:`url(${backgroundImg})` }}
         className="card-container" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
          
             <div className="card-header">
-                <BlockData />
+            {objShow ? <ElementInfo show={false}/>:<ElementInfo show={true}/>}
             </div>
             <div className="card-trailer" onMouseLeave={() => setViewTrailer(false)} >
-                <div className={objViewTrailer ? "card-opacity" : ""} onMouseEnter={() => setViewTrailer(true)} className="card-header-icon-trailer">
+                <div className={objShow ? "card-opacity" : ""} onMouseEnter={() => setViewTrailer(true)} className="card-header-icon-trailer">
                     <img className="card-icon-trailer" src={preview}></img>
                 </div>
                 <div class={objViewTrailer ? "card-trailer-site card-opacity" : "card-trailer-site card-hide"}>
@@ -70,5 +85,11 @@ let Card = ({ backgroundImg, BlockData }) => {
             <div className="card-footer">4</div>
     </div>
 }
-
+class Data
+{
+    movies = false;
+    anime = false;
+    cartoons=false;
+    serials=false;
+}
 export { MoviesCard, SerialsCard, AnimeCard, CartoonsCard };

@@ -27,7 +27,7 @@ flex:0;
 }
 
 .header >  * {
-   z-index: 1;
+   z-index: 15;
 }
 .visible-head{
  display: none;

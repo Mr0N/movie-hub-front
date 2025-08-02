@@ -7,12 +7,12 @@
     display: flex;
     flex-direction: row;
     align-items:center;
-    z-index: 1;
+    z-index: 11;
     height: 44px;
 }
 .menu *
 {
-    z-index: 1;
+    z-index: 11;
 }
 
 .hide-menu
@@ -72,7 +72,7 @@
     position:absolute;
       background-color:#222d33;
 
-      z-index: 3 ;
+      z-index: 13 ;
        height: 50vh;
        width:80vw;
        left: 20%;
